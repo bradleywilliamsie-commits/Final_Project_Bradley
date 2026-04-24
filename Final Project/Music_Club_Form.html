@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Registration Form</title>
+</head>
+<style>
+    body {
+        background-color: #050063;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    h2 {
+        color: #96A0FF;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    p, input, label, table, a {
+        color: #FFE896;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    select {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+</style>
+<body>
+    <center>
+        <em>
+            <h1>Music Club Registration Form</h1>
+        </em>
+        <p>Please fill in the information below to proceed:</p>
+        <hr>
+        
+        <h2>Registration Form</h2>
+        <p>Full Name:</p>
+        <input type="text" placeholder="Enter your full name" style="width: 300px;">
+        <p>Gender:</p>
+        <input type="radio"><a>Male</a>
+        <input type="radio"><a>Female</a>
+        <br>
+        <br>
+        <p>E-Mail:</p>
+        <input type="text" placeholder="Enter your e-mail here..." style="width: 300px;">
+        <br>
+        <br>
+        <p>What instruments do you play?</p>
+        <table>
+            <tr>
+                <td><input type="checkbox">Piano</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Guitar/Electic Guitar</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Bass</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Violin/Cello</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Vocals</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Drums</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">Others...</td>
+            </tr>
+            </table>
+        <p><em>If you chose others, please type it here</em></p>
+        <input type="text" placeholder="Type your instrument/s here..." style="width: 300px;">
+        <br>
+        <br>
+        <p>How good are you at playing that/those instruments?</p>
+        <label for="myDropDown">Range:</label>
+        <select name="myDropDown" id="myDropDown">
+            <option value="Fine">Fine</option>
+            <option value="Good">Good</option>
+            <option value="Great">Great</option>
+            <option value="Amazing">Amazing</option>
+        </select>
+        <br>
+        <br>
+        <p>What instruments do you want to learn to play?</p>
+        <input type="text" placeholder="Type them here..." style="width: 300px;">
+        <br>
+        <br>
+        <p>Do you want to play in concerts/competitions?</p>
+        <input type="radio"><a>Yes</a>
+        <input type="radio"><a>No</a>
+        <input type="radio"><a>Maybe</a>
+        <br>
+        <br>
+        <p>Tell us more about yourself</p>
+        <textarea placeholder="Type your description here..." style="width: 300px; height: 120px;"></textarea>
+        <p>What was your old club?</p>
+        <input type="text" placeholder="Share your experiences here..." style="width: 300px;">
+        <br>
+        <br>
+        <input style="color: black;" type="submit" value="Submit Now">
+        <input style="color: black;" type="reset" value="Reset">
+    </center>
+</body>
+</html>
