@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: xx-large;
+        }
+
+        h2 {
+            color: #96A0FF;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: x-large;
+        }
+
+        h3 {
+            color: whitesmoke;
+            font-family:'Courier New', Courier, monospace ;
+            font-weight: 900;
+        }
+
+        p {
+            color: #FFE896;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+        body {
+            background-color: #050063;
+        }
+
+        footer {
+            text-align: center;
+            font-size: large;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My Favorite Fonts in CSS</h1>
+    <br>
+    <h2 style="font-family: 'Courier New', Courier, monospace;">Courier New</h2>
+    <h3>I really like the Courier New font, and I use it very often because I like the typewriter feel it has. As you can see in my websites, courier new is definitely one of my favorites.</h3>
+    <p>Brief History: Howard "Bud" Kettler designed the original Courier in 1955 for IBM typewriters. IBM never trademarked the name, making it public domain. Later, Monotype adapted it for digital screens as Courier New. It is a monospaced font, meaning every letter takes up the exact same amount of space.</p>
+    <hr>
+    <br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">Times New Roman</h2>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">This is also one of my favorites because it is very elegant, and it looks good on google docs, or when I'm a writing a paper.</h3>
+    <p style="font-family: 'Times New Roman', Times, serif;">Brief History: Times New Roman was created in 1931 for The Times of London. The newspaper needed a new font to save space and improve reading. Typographer Stanley Morison and artist Victor Lardent designed it. They used an older font called Plantin as a base.</p>
+    <hr>
+    <br>
+    <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Gill Sans</h2>
+    <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">In my opinion, gill sans is very good because it is simple to read, and easy to look at, and because of this, I really enjoy using it on my websites.</h3>
+    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Brief History: Gill Sans is a clean, modern, and highly legible sans-serif typeface (a font without small decorative lines at the ends of letters). Designed by British artist Eric Gill, it was released by Monotype in 1928.</p>
+    <hr>
+    <br>
+    <p>The link below is to go back to the home page</p>
+    <a style="color: whitesmoke; font-family: 'Courier New', Courier, monospace;" href="Final_Project.html">Home Page</a> <br>
+</body>
+</html>
