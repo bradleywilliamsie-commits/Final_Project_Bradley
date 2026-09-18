@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Text Summarizer</title>
+</head>
+<style>
+    body {
+    background-color: rgb(0, 0, 99);
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0 0 20px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .content-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+
+    .container1 {
+        box-sizing: border-box;
+        flex: 1 1 380px;
+        max-width: 480px;
+        min-width: 0;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .container2 {
+        box-sizing: border-box;
+        flex: 1 1 380px;
+        max-width: 480px;
+        min-width: 0;
+        padding: 30px;
+        background-color: rgb(178, 196, 245);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #userinput,
+    #resulttextarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: inherit;
+        resize: vertical;
+    }
+
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2rem;
+        font-weight: 900;
+        color: white;
+    }
+
+    p, a {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: rbg(11, 14, 67);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: cyan;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: rgba(0, 255, 255, 0.523);
+    }
+
+    footer {
+        text-align: center;
+        width: 100%;
+        bottom: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #333;
+    }
+</style>
+<body>
+    
+<div style="padding-top: 10px;">
+    <h1 style="text-align: center;">AI-Powered Text Summarizer</h1>
+    <p style="text-align: center; color: white;">Summarize long text into concise and clear summaries! </p>
+</div>
+
+
+<div class="content-row">
+    <div class="container1">
+        <h2>Make Your School Life Easier!</h2>
+        <p>Enhance your learning! Instantly get a summary of your study material!</p>
+        <textarea id="userinput"  rows="15">
+        </textarea>
+        <br>
+        <br>
+        <button class="button" id="summarizebutton" onclick="gettextareavalue">Summarize</button>
+    </div>
+
+    <div class="container2">
+        <h2 style="text-align: center;">Summary</h2>
+        <p>Here's a summary of your input: </p>
+        <br>
+        <textarea id="resulttextarea" rows="15">
+        </textarea>
+    </div>
+</div>
+<div id="answer"></div>
+<script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Import @google/generative-ai, as shown above. -->
+<script type="module">
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+// Fetch your API_KEY
+const API_KEY = "AQ.Ab8RN6L6sfBEahEn9BZGKFCoPMkDApv4ATALSSfPw0uCboWXKA";
+
+// Access your API key
+const genAI = new GoogleGenerativeAI(API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash"});
+
+async function ask(prompt) {
+    const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash"});
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    return text;
+    //let convertedText = new showdown.Converter().makeHtml(text);
+    //return convertedText;
+}
+
+// get value from text area
+function gettextareavalue() {
+    // Get the value of the textarea with id="userinput"
+    var textareaValue = document.getElementById("userinput").value;
+    console.log(textareaValue); // This will log the value to the console
+}
+
+
+// generate summarization
+async function generateSummarization() {
+let textareaValue = document.getElementById("userinput").value;
+let sum_result = await ask("Please create a short summary of the given text in one short paragraph with 5 sentences. Only keep the main points, and use bullet points if needed." + textareaValue);
+document.getElementById("resulttextarea").value = sum_result;
+}
+
+document.getElementById("summarizebutton").addEventListener("click", generateSummarization);
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<br>
+<br>
+<br>
+<a style="color: white;" href="Final_Project.html">Home Page</a>
+
+</body>
+<footer>
+  <p style="color: white;">© 2026 Koding Next</p>
+</footer>
+
+</html>
